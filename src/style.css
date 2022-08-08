@@ -1,54 +1,77 @@
 *{
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
 
 body {
-    margin: 0px;
     background-color: #B9D3B0;
  }
 
 header {
     background-color: #F88F79;
     width: 100%;   
-    height: 90px;
-    margin: 0px;
-    line-height: 50%;
-}
-header h1{
-    width: 20%;
-    height: 102px;
-    margin: 0px;
-}
-
-header figure{
-    margin: 0px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
 }
 
 header figure img{
     height: 71px;
-    margin: 0px;
-    margin-left: 150px;
-    
+    align-items: center;
+    margin-left: 50px;
+   
 }
-
-nav{
-   margin-right: 3em;
-}
-
-ul {
-    font-family: 'Montserrat', sans-serif;
-    list-style-type: none;
-    text-decoration: none;
-    margin: 0 ;
+.menu{
     padding: 10px;
+    justify-content: flex-end;
+    margin-right: 50px;
+    font-weight: 500;
+    font-size: .9em;
+}
+
+.menu li{
     display: inline-block;
-    background: rebeccapurple;
+    list-style: none;
+    text-transform: uppercase;
+    padding: 0 20px;
     
 }
 
-#banner{
+.menu li a{
+    text-decoration: none;
+    color: black;
+}
+
+.banner{
     width: 100%;
-    height: 420px;
-    background: powderblue;
-    margin: 0px;
+    height: 560px;
+    background: center fixed url("images/g-banner.jpg");
+    background-size: cover;
+   /* perspective: 2px;*/
+}
+
+#all_movies{
+    margin-top: 5em;
+    display: flex;
+    justify-content: space-around; 
+    flex-wrap: wrap; 
+}
+
+.movies{
+    margin: 0 40px;
+    width: 18%;
+    text-align: center;
+    margin-bottom: 1.5em;
+
+}
+
+.poster{
+    width: 80%;
+    border-radius: 8px;
+    border: 5px solid #81BDA4;
 }
