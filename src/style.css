@@ -38,8 +38,7 @@ header figure img{
     display: inline-block;
     list-style: none;
     text-transform: uppercase;
-    padding: 0 20px;
-    
+    padding: 0 20px; 
 }
 
 .menu li a{
