@@ -1,6 +1,4 @@
-
 //import { cleanghibli, } from './data.js';
-
 
 import data from './data/ghibli/ghibli.js';
 console.log(data);
@@ -14,5 +12,3 @@ let data1="";
       </section>`;
        });
        document.getElementById("all_movies").innerHTML=data1;
-
-

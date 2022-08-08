@@ -1,11 +1,12 @@
 *{
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
     font-family: 'Montserrat', sans-serif;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
 }
 
 body {
-    margin: 0px;
     background-color: #B9D3B0;
  }
 
@@ -16,6 +17,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: fixed;
 }
 
 header figure img{
@@ -36,8 +38,7 @@ header figure img{
     display: inline-block;
     list-style: none;
     text-transform: uppercase;
-    padding: 0 20px;
-    
+    padding: 0 20px; 
 }
 
 .menu li a{
@@ -45,50 +46,31 @@ header figure img{
     color: black;
 }
 
-#banner{
+.banner{
     width: 100%;
-    height: 420px;
-    background: powderblue;
-    margin: 0px;
+    height: 560px;
+    background: center fixed url("images/g-banner.jpg");
+    background-size: cover;
+   /* perspective: 2px;*/
 }
 
-.galeria{
-    width:90%;
-    margin:auto;
-    list-style:none;
-    padding: 20px;
-    box-sizing: border-box;
+#all_movies{
+    margin-top: 5em;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-around; 
+    flex-wrap: wrap; 
 }
 
-.galeria li{
-    margin: 5px;
-}
-
-.galeria img{
-    width: 266px;
-    height: 366px;
-    border: 6px solid #81BDA4;
-    border-radius: 10px;
-}
-
-#movieTitlesOne{
-    left: 121px;
-}
-
-.movieTitles{
-    width: 267px;
-    height: 72px;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 24px;
+.movies{
+    margin: 0 40px;
+    width: 18%;
     text-align: center;
-    color: #000000;
+    margin-bottom: 1.5em;
+
 }
 
-
-
+.poster{
+    width: 80%;
+    border-radius: 8px;
+    border: 5px solid #81BDA4;
+}
