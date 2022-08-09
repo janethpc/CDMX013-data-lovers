@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
 *{
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
     font-family: 'Montserrat', sans-serif;
     margin: 0px;
     padding: 0px;
@@ -99,20 +100,3 @@ header figure img{
     border: 6px solid #81BDA4;
     border-radius: 10px;
 }
-
-#movieTitlesOne{
-    left: 121px;
-}
-
-.movieTitles{
-    width: 267px;
-    height: 72px;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 24px;
-    text-align: center;
-    color: #000000;
-}
-
