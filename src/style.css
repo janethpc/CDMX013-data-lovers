@@ -73,4 +73,46 @@ header figure img{
     width: 80%;
     border-radius: 8px;
     border: 5px solid #81BDA4;
+    height: 420px;
+    background: powderblue;
+    margin: 0px;
 }
+
+.galeria{
+    width:90%;
+    margin:auto;
+    list-style:none;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.galeria li{
+    margin: 5px;
+}
+
+.galeria img{
+    width: 266px;
+    height: 366px;
+    border: 6px solid #81BDA4;
+    border-radius: 10px;
+}
+
+#movieTitlesOne{
+    left: 121px;
+}
+
+.movieTitles{
+    width: 267px;
+    height: 72px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: #000000;
+}
+
