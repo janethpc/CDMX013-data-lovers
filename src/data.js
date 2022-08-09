@@ -2,7 +2,6 @@
 
 export const escribirMensajeConsola =
 
-export const cleanghibli = (data)
 
 
 
