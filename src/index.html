@@ -1,37 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers Project</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="main.js" type="module"></script>
-  </head>
-  <body>
-    <header>
-      <figure><h1><img src="images/logo-ghibli.png" alt="logo"></h1></figure>
-    
-      <nav class="menu">
-        <ul>
-            <li><a href="#">Título</a></li>
-            <li><a href="#">Año</a></li>
-            <li><a href="#">Ordenar</a></li>
-        </ul>
-      </nav>
-    </header>
+
+<head>
+  <meta charset="utf-8">
+  <title>Data Lovers Project</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <figure><img src="images/logo-ghibli.png" alt="logo"></figure>
+    <nav class="navbar">
+      <li><a href="#">Género</a></li>
+      <li><a href="#">Año</a></li>
+      <div class="nav-dropdown">
+        <li>1980 - 1985</li>
+        <li>1986 - 2000</li>
+        <li>2001 - 2005</li>
+        <li>2006 - 2010</li>
+        <li>2011- 2015</li>
+      </div>
+      <li><a href="#">Ordenar</a></li>
+    </nav>
+  </header>
   <figure class="banner"></figure>
 
 
-    <main id="all_movies">
-      <section class="movies">
-        <img src="" alt="poster" class="poster">
-        <h2 class="title">title</h2>
-        <p>año</p>
-      </section>
-    </main>
-  
-  
+  <main id="all_movies">
+    <section class="movies">
+      <img src="" alt="poster" class="poster">
+      <h2 class="title">title</h2>
+      <p>año</p>
+    </section>
+  </main>
 
-   
-    
-  </body>
+
+
+
+<script src="main.js" type="module"></script>
+<script src="data.js" type="module"></script>
+</body>
+
+
 </html>

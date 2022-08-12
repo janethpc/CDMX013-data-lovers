@@ -14,3 +14,5 @@ data.films.map((value) => {
       </section>`;
 });
 document.getElementById("all_movies").innerHTML = data1;
+
+
