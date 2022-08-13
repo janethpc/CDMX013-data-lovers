@@ -110,28 +110,6 @@ header figure img{
 	display: block;
 }
 
-.dd_submenu {
-    position: absolute;
-    top: 0;
-    left: 115%;
-    width: 100%;
-    display: none;
-}
-
-.dd_submenu:before {
-    content: "";
-    position: absolute;
-    top: 15px;
-    left: -30px;
-    z-index: 1;
-    border: 15px solid;
-    border-color: transparent  #f88f79 transparent transparent;
-}
-
-.navbar ul li a.dd_menu_a.active + .dd_submenu{
-	display: block;
-}
-
 .banner{
     width: 100%;
     height: 560px;
@@ -141,6 +119,13 @@ header figure img{
 }
 
 #all_movies{
+    margin-top: 5em;
+    display: flex;
+    justify-content: space-around; 
+    flex-wrap: wrap; 
+}
+
+#all_fantasy{
     margin-top: 5em;
     display: flex;
     justify-content: space-around; 

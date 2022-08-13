@@ -1,175 +1,167 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers Project</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/'-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css" />
-    <script src="main.js" type="module"></script>
-  </head>
-  <body>
-    <header>
-      <figure><h1><img src="images/logo-ghibli.png" alt="logo"></h1></figure>
-    
-      <div class="wrapper">
-        <div class="navbar">
-          <ul>
-            <li><a href="#" class="a_parent">
-              <div class="wrap">
-                <span class="icon">
-                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAGJJREFUSEvt1TEOABAQRFHuf2gaFNu8KGwiWZ0M/s5MobfHqz9+v6UDxnK0wXsvo/H8GTw6SANoYul0oAekE1AdMCJlLJ2A6oARKWPpBFQHjEgZSyfg3w5k/VpP/5OvJ9SFCfuGJhkJgoRBAAAAAElFTkSuQmCC"/>
-                </span>
-                <span class="text">FILMS</span>
-              </div>
-              </a>
-              <div class="dd_menu">
-                <ul>
-                  <li>
-                    <a href="#" class="dd_menu_a">
-                      <div class="wrap">
-                        <span class="icon">
-                          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAUJJREFUSEvt07suhFEUBeBvHkBQqtBo0apEo3N5AvQSl1JFI6FAoccTuHQaUWl5A7wB8QBkj/PLmT//mMlMRmN2dXLOOmvty9o1PY5aj/n1BVp2+M9bdIJFjLVMrRrwgnPsFc95BUG+0SFx+VsI7MZlLvCGQUzjqUOhKTwiKhkvC3wm0m7n0sCTk+UPWzhKgh/YwWmpqnXsYyDdb+MYbQkUoJyzXFkzTEuBEaxgATO4xR0OM7UJLGEO83jADQ7araDZjAv7xhCbRdMKChcNI855hDsus/0IgeUKt0UCz3gtsHlfr9KS3WMtWS1EZhP5EN6Tatg5kgiRwEcE+VnCX6cWNuxBAML/8bkqLrCaHmJbY05VEUlExfU2lp0RIrHRARhNv6PcIKxvZhabSXAyw0WCcf8zo26X6pdZfz/1Bf5Bi74ApHc9GRC2mCYAAAAASUVORK5CYII="/>
-                        </span>
-                        <span class="text">
-                        Drama
-                        </span>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#"  class="dd_menu_a">
-                      <div class="wrap">
-                        <span class="icon">
-                          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAZdJREFUSEu1ld0xREEQhb+VACEQASLAswc2AhJQiAARkAGqvBPCioAMkIEq76hPTW/dnb137qzdnapb+zM9fU6f09N3wJLXYMn5mQXgDDgF1oERcA689hGsBTgEHrNk78DGogDugKOU7ANYA1aBvVRNJ05tBTeAIEpznABuFw0gSzVXLuXRjyvgsiTTLBVcAyHPPvCQjLa6uSWS+QnwBXwDK8BLkkwf5gJQc5/d9OiD6wk4AIbpeytIn0T2vEzVOpdCLzT+J5ndeif6AGQryBbw2ULRpLbsWwKZCikBKImsBfEWty2lc2+zq2VLAGose5OURoIEdoD7FDtBpASgtq2HGhmUR6OdS0po1VUAHpSZF0ozu5aX7CLFPddWoCwysUPCBz9zk8N4fVJOyRgzIWcukcll3wyyEgfbdlaGoHEnYstqBRuvHMDkMmseFFSWuVRtAFGV1fytHGAqIMWZLF40Yaxnm4PO/wN0LGdXBSFTMMl/x6iI2y2xaIyqLjIoDsWBXO9oSRNL5F+jotChdVt9s6guSyHqF+3tVxnLMBDFAAAAAElFTkSuQmCC"/>
-                        </span>
-                        <span class="text">Fantasy</span>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#"  class="dd_menu_a">
-                      <div class="wrap">
-                      <span class="icon">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAARBJREFUSEvdlUEOwVAQhr/ewBHYS7AnOAFOgKVT4BSWuIEbkLBnYc8R3ID8yau0zXttX7Ubs2naTv9vZv5pG1BxBBXr85+AJrABusAFWAD3oqO0jehsxENNQXplAt4WscJeFe1gbIo4ZHVmA2R5UAOuRrgDvNIgRVpfAUsjugZ07gxfQDtSfSiqLm4ugi/gBPQTYro2LAMwA7YOoTmws91L60CCMlCbImMf5mjTUV7DZrgLUE9sioycZqzkHlBRsXABZFrLZD4BAfOEvJAn37ABomuYRzSao8K0VU7AADj6qibyY+9GtIPwDc07DlcdMlxdaLSxH462ZfRj9eHj0pokASVp59ui0mC+nwpvcOWAD25JKhnvo/wRAAAAAElFTkSuQmCC"/>
-                      </span>
-                      <span class="text">Adventure </span>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#"  class="dd_menu_a">
-                      <div class="wrap">
-                      <span class="icon">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAaNJREFUSEu1lclNBEEMRd9EgIgAENxZEoAIWBIALpyBMxzhDFy5sCTAEgFEANxBggzIAPSkqpG7p7u6Z6Sx1NL02PW/7fp2D5iyDaaMTx+CfWAdWEmPOb2n5xF4KiVZItgGLoD5jiq/gWNAshFrI7gEDlP0D+D7S8rav61mAzgC5lKcMRJVrIkggnvA95JJYqXaVSIdxtcJbMtD8q6GjLu0YEVvKWgntqtOYD8tuU/mddJciRgL2RkJVMsNYM+7LratopzgsIpIcAvshezt/VZCUiH1C2zy5yruABOuzIHaXgbsvc6sopxtvMAohOg3Se9CLHEqBH8p0qp+gZkclA7532yKKfkjTitBl2pK/laC2CJ/T2JZrh95rZQuWYJPYLGD6QtYSjHFS85DFnW8C6iIkqm8+xRQlKkxTYN2Apy1MJwC57XsK3PUd1WsAQfAZgJ7Bq7Deui9KjwfNW5P1X/Jxlp2GSiS2DbfX2vr2o+Q4HmtjGzS+qDVs/TSBc77vq0Key7RWB+cCCaRj312lWjq3FkRtBE4A/T5Jk8ycMMzUyf4Bx+CZBliISi+AAAAAElFTkSuQmCC"/>
-                      </span>
-                      <span class="text">Comedy</span>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#"  class="dd_menu_a">
-                      <div class="wrap">
-                      <span class="icon">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAXJJREFUSEvVle01BEEQRe9GQAaIABmQgQwQASJABIgAESACRIAMyIAIONepcmpnx87Mrv2h/vTMdPd79fGqZsSCbbRgfIYQnAAH4dBVrHvl/ajN2b4Egh93RHsKeG7M+hK8A0vAJuDzbSOCJ+AVWPsLgmdgOYAk2wAkeANWZyXIFAm4DUiiCX4fhHOlSDBB1yNFpsIo9Nz1Ediap8jeFeghSGoELwFudBPWt8h5sZL4bSq4B4YS1Eh8Ni2tnqdHlcDDl21KKNK8KAVODJVjj7iauut6phKo45WOZmqqaCecStnmdYnsmbEUfcZuW9oEOAd2S0PV7r6LfRvQhvxRVQWbRpCeZZR6aA9oqX/nkw58xJ5nOyNI0rbMCeSw0+tD4CzArWXKeGYC5Sm4QK6KQ9sHctJ+fxiaomYkdVQ4rq3TmM1DYCpuosOVZv4bfiXIkdyh1IltFaRcW63ZaOavqxcSyDpY4ImfTGWaZVQMivD/E3wBmu5TGdxZIisAAAAASUVORK5CYII="/>
-                      </span>
-                      <span class="text">Romance</span>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li><a href="#" class="a_parent">
-              <div class="wrap">
-                <span class="icon">
-                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAJVJREFUSEvtld0RQEAMhD+VKAGdKIUKKEkpdEAlzM04zBEx5+fF3esl2ezOJol4+UUv10cDGOcGpDjt/3uAHKiA1FO6HiiBxua71E1A7FncprVAJgFYTW9irNK7DD4D0NwlMdy5SmIQABYFgkSum4KL1A3yA4meWNfd9p64g2YOTg0kqtrHAQNQnB0cz7pymu/WvNzIBMq3KBmlzVTMAAAAAElFTkSuQmCC"/>
-                </span>
-                <span class="text">Año</span>
-              </div>
-              </a>
-              <div class="dd_menu">
-                <ul>
-                  <li>
-                    <a href="#" class="dd_menu_a">
-                      <div class="wrap">
-                        <span class="icon">
-                          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAJZJREFUSEvt1EEKgDAQA8D0Z/5EfZn6UiXQghRsk6W96clDm8HNYsLkJ03Oxw90J6yO6ARwA9i7idUBBWD4mu/x3UJcgI6FKEAJLV9hISoQRhwghLiAjYwALgDb1/q6wHtlmdkM5wEHsMMdIBSuAuFwFWCBRy6xO/O6bLUDIktrW0ZtkfsztbbIDlc7CAWXS2oHYWQ68AB5cxsZKj/ZQgAAAABJRU5ErkJggg=="/>
-                        </span>
-                        <span class="text">
-                        1986-1991
-                        </span>
-                      </div>
-                    </a>
-                  <li>
-                    <a href="#" class="dd_menu_a">
-                      <div class="wrap">
-                        <span class="icon">
-                          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAJZJREFUSEvt1EEKgDAQA8D0Z/5EfZn6UiXQghRsk6W96clDm8HNYsLkJ03Oxw90J6yO6ARwA9i7idUBBWD4mu/x3UJcgI6FKEAJLV9hISoQRhwghLiAjYwALgDb1/q6wHtlmdkM5wEHsMMdIBSuAuFwFWCBRy6xO/O6bLUDIktrW0ZtkfsztbbIDlc7CAWXS2oHYWQ68AB5cxsZKj/ZQgAAAABJRU5ErkJggg=="/>
-                        </span>
-                        <span class="text">1992-1997</span>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="dd_menu_a">
-                      <div class="wrap">
-                      <span class="icon">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAJZJREFUSEvt1EEKgDAQA8D0Z/5EfZn6UiXQghRsk6W96clDm8HNYsLkJ03Oxw90J6yO6ARwA9i7idUBBWD4mu/x3UJcgI6FKEAJLV9hISoQRhwghLiAjYwALgDb1/q6wHtlmdkM5wEHsMMdIBSuAuFwFWCBRy6xO/O6bLUDIktrW0ZtkfsztbbIDlc7CAWXS2oHYWQ68AB5cxsZKj/ZQgAAAABJRU5ErkJggg=="/>
-                      </span>
-                      <span class="text">1998-2003</span>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="dd_menu_a">
-                      <div class="wrap">
-                      <span class="icon">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAJZJREFUSEvt1EEKgDAQA8D0Z/5EfZn6UiXQghRsk6W96clDm8HNYsLkJ03Oxw90J6yO6ARwA9i7idUBBWD4mu/x3UJcgI6FKEAJLV9hISoQRhwghLiAjYwALgDb1/q6wHtlmdkM5wEHsMMdIBSuAuFwFWCBRy6xO/O6bLUDIktrW0ZtkfsztbbIDlc7CAWXS2oHYWQ68AB5cxsZKj/ZQgAAAABJRU5ErkJggg=="/>
-                      </span>
-                      <span class="text">2004-2009</span>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="dd_menu_a">
-                      <div class="wrap">
-                      <span class="icon">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAJZJREFUSEvt1EEKgDAQA8D0Z/5EfZn6UiXQghRsk6W96clDm8HNYsLkJ03Oxw90J6yO6ARwA9i7idUBBWD4mu/x3UJcgI6FKEAJLV9hISoQRhwghLiAjYwALgDb1/q6wHtlmdkM5wEHsMMdIBSuAuFwFWCBRy6xO/O6bLUDIktrW0ZtkfsztbbIDlc7CAWXS2oHYWQ68AB5cxsZKj/ZQgAAAABJRU5ErkJggg=="/>
-                      </span>
-                      <span class="text">2010-2015</span>
-                      </div>
-                    </a>
-                  </li>
-            </ul>
-            <div>
+
+<head>
+  <meta charset="utf-8">
+  <title>Data Lovers Project</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="main.js" type="module"></script>
+</head>
+
+<body>
+  <header>
+    <figure>
+      <h1><img src="images/logo-ghibli.png" alt="logo"></h1>
+    </figure>
+
+    <div class="wrapper">
+      <div class="navbar">
+        <ul>
+          <li><a href="#" class="a_parent">
+              <span class="icon">
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAGJJREFUSEvt1TEOABAQRFHuf2gaFNu8KGwiWZ0M/s5MobfHqz9+v6UDxnK0wXsvo/H8GTw6SANoYul0oAekE1AdMCJlLJ2A6oARKWPpBFQHjEgZSyfg3w5k/VpP/5OvJ9SFCfuGJhkJgoRBAAAAAElFTkSuQmCC" />
+              </span>
+              <span class="text" id="text">FILMS</span>
+            </a>
+            <div class="dd_menu">
               <ul>
-                <li><a href="#" class="a_parent">
-                  <div class="wrap">
+                <li><a href="#" class="dd_menu_a">
                     <span class="icon">
-                      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAFxJREFUSEtjZKAxYKSx+QyjFhAM4eEZRP8J+hu/ApRQwRZENLeAQg+gah/wSCY2uHA6lJAPaG4BxfFByAd0tQA9uIhyHFGKoN6guQVkBRcpPhi1gKwQIKhp6McBACZ4Bhljo5edAAAAAElFTkSuQmCC"/>
-                        </span>
-                        <span class="text">ORGANIZE</span>
-                      </div>
-                      </a>
-                      
+                      <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAUJJREFUSEvt07suhFEUBeBvHkBQqtBo0apEo3N5AvQSl1JFI6FAoccTuHQaUWl5A7wB8QBkj/PLmT//mMlMRmN2dXLOOmvty9o1PY5aj/n1BVp2+M9bdIJFjLVMrRrwgnPsFc95BUG+0SFx+VsI7MZlLvCGQUzjqUOhKTwiKhkvC3wm0m7n0sCTk+UPWzhKgh/YwWmpqnXsYyDdb+MYbQkUoJyzXFkzTEuBEaxgATO4xR0OM7UJLGEO83jADQ7araDZjAv7xhCbRdMKChcNI855hDsus/0IgeUKt0UCz3gtsHlfr9KS3WMtWS1EZhP5EN6Tatg5kgiRwEcE+VnCX6cWNuxBAML/8bkqLrCaHmJbY05VEUlExfU2lp0RIrHRARhNv6PcIKxvZhabSXAyw0WCcf8zo26X6pdZfz/1Bf5Bi74ApHc9GRC2mCYAAAAASUVORK5CYII=" />
+                    </span>
+                    <span class="text">Drama</span></a>
+                </li>
+                <li><a href="#" class="dd_menu_a">
+                    <span class="icon">
+                      <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAZdJREFUSEu1ld0xREEQhb+VACEQASLAswc2AhJQiAARkAGqvBPCioAMkIEq76hPTW/dnb137qzdnapb+zM9fU6f09N3wJLXYMn5mQXgDDgF1oERcA689hGsBTgEHrNk78DGogDugKOU7ANYA1aBvVRNJ05tBTeAIEpznABuFw0gSzVXLuXRjyvgsiTTLBVcAyHPPvCQjLa6uSWS+QnwBXwDK8BLkkwf5gJQc5/d9OiD6wk4AIbpeytIn0T2vEzVOpdCLzT+J5ndeif6AGQryBbw2ULRpLbsWwKZCikBKImsBfEWty2lc2+zq2VLAGose5OURoIEdoD7FDtBpASgtq2HGhmUR6OdS0po1VUAHpSZF0ozu5aX7CLFPddWoCwysUPCBz9zk8N4fVJOyRgzIWcukcll3wyyEgfbdlaGoHEnYstqBRuvHMDkMmseFFSWuVRtAFGV1fytHGAqIMWZLF40Yaxnm4PO/wN0LGdXBSFTMMl/x6iI2y2xaIyqLjIoDsWBXO9oSRNL5F+jotChdVt9s6guSyHqF+3tVxnLMBDFAAAAAElFTkSuQmCC" />
+                    </span>
+                    <span class="text" id="fantasyfilms">Fantasy</span></a>
+                </li>
+                <li><a href="#" class="dd_menu_a">
+                    <span class="icon">
+                      <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAARBJREFUSEvdlUEOwVAQhr/ewBHYS7AnOAFOgKVT4BSWuIEbkLBnYc8R3ID8yau0zXttX7Ubs2naTv9vZv5pG1BxBBXr85+AJrABusAFWAD3oqO0jehsxENNQXplAt4WscJeFe1gbIo4ZHVmA2R5UAOuRrgDvNIgRVpfAUsjugZ07gxfQDtSfSiqLm4ugi/gBPQTYro2LAMwA7YOoTmws91L60CCMlCbImMf5mjTUV7DZrgLUE9sioycZqzkHlBRsXABZFrLZD4BAfOEvJAn37ABomuYRzSao8K0VU7AADj6qibyY+9GtIPwDc07DlcdMlxdaLSxH462ZfRj9eHj0pokASVp59ui0mC+nwpvcOWAD25JKhnvo/wRAAAAAElFTkSuQmCC" />
+                    </span>
+                    <span class="text">Adventure </span></a>
+                </li>
+                <li><a href="#" class="dd_menu_a">
+                    <span class="icon">
+                      <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAaNJREFUSEu1lclNBEEMRd9EgIgAENxZEoAIWBIALpyBMxzhDFy5sCTAEgFEANxBggzIAPSkqpG7p7u6Z6Sx1NL02PW/7fp2D5iyDaaMTx+CfWAdWEmPOb2n5xF4KiVZItgGLoD5jiq/gWNAshFrI7gEDlP0D+D7S8rav61mAzgC5lKcMRJVrIkggnvA95JJYqXaVSIdxtcJbMtD8q6GjLu0YEVvKWgntqtOYD8tuU/mddJciRgL2RkJVMsNYM+7LratopzgsIpIcAvshezt/VZCUiH1C2zy5yruABOuzIHaXgbsvc6sopxtvMAohOg3Se9CLHEqBH8p0qp+gZkclA7532yKKfkjTitBl2pK/laC2CJ/T2JZrh95rZQuWYJPYLGD6QtYSjHFS85DFnW8C6iIkqm8+xRQlKkxTYN2Apy1MJwC57XsK3PUd1WsAQfAZgJ7Bq7Deui9KjwfNW5P1X/Jxlp2GSiS2DbfX2vr2o+Q4HmtjGzS+qDVs/TSBc77vq0Key7RWB+cCCaRj312lWjq3FkRtBE4A/T5Jk8ycMMzUyf4Bx+CZBliISi+AAAAAElFTkSuQmCC" />
+                    </span>
+                    <span class="text">Comedy</span></a>
+                </li>
+                <li><a href="#" class="dd_menu_a">
+                    <span class="icon">
+                      <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAXJJREFUSEvVle01BEEQRe9GQAaIABmQgQwQASJABIgAESACRIAMyIAIONepcmpnx87Mrv2h/vTMdPd79fGqZsSCbbRgfIYQnAAH4dBVrHvl/ajN2b4Egh93RHsKeG7M+hK8A0vAJuDzbSOCJ+AVWPsLgmdgOYAk2wAkeANWZyXIFAm4DUiiCX4fhHOlSDBB1yNFpsIo9Nz1Ediap8jeFeghSGoELwFudBPWt8h5sZL4bSq4B4YS1Eh8Ni2tnqdHlcDDl21KKNK8KAVODJVjj7iauut6phKo45WOZmqqaCecStnmdYnsmbEUfcZuW9oEOAd2S0PV7r6LfRvQhvxRVQWbRpCeZZR6aA9oqX/nkw58xJ5nOyNI0rbMCeSw0+tD4CzArWXKeGYC5Sm4QK6KQ9sHctJ+fxiaomYkdVQ4rq3TmM1DYCpuosOVZv4bfiXIkdyh1IltFaRcW63ZaOavqxcSyDpY4ImfTGWaZVQMivD/E3wBmu5TGdxZIisAAAAASUVORK5CYII=" />
+                    </span>
+                    <span class="text">Romance</span></a>
+                </li>
               </ul>
             </div>
-        </div>
-        
-      </div> 
+          </li>
+          <li><a href="#" class="a_parent">
+              <span class="icon">
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAJVJREFUSEvtld0RQEAMhD+VKAGdKIUKKEkpdEAlzM04zBEx5+fF3esl2ezOJol4+UUv10cDGOcGpDjt/3uAHKiA1FO6HiiBxua71E1A7FncprVAJgFYTW9irNK7DD4D0NwlMdy5SmIQABYFgkSum4KL1A3yA4meWNfd9p64g2YOTg0kqtrHAQNQnB0cz7pymu/WvNzIBMq3KBmlzVTMAAAAAElFTkSuQmCC" />
+              </span>
+              <span class="text">Año</span></a>
+            <div class="dd_menu">
+              <ul>
+                <li>
+                  <a href="#" class="dd_menu_a">
+                    <span class="icon">
+                      <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAJZJREFUSEvt1EEKgDAQA8D0Z/5EfZn6UiXQghRsk6W96clDm8HNYsLkJ03Oxw90J6yO6ARwA9i7idUBBWD4mu/x3UJcgI6FKEAJLV9hISoQRhwghLiAjYwALgDb1/q6wHtlmdkM5wEHsMMdIBSuAuFwFWCBRy6xO/O6bLUDIktrW0ZtkfsztbbIDlc7CAWXS2oHYWQ68AB5cxsZKj/ZQgAAAABJRU5ErkJggg==" />
+                    </span>
+                    <span class="text">1986-1991</span></a>
+                </li>
+                <li>
+                  <a href="#" class="dd_menu_a">
+                    <span class="icon">
+                      <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAJZJREFUSEvt1EEKgDAQA8D0Z/5EfZn6UiXQghRsk6W96clDm8HNYsLkJ03Oxw90J6yO6ARwA9i7idUBBWD4mu/x3UJcgI6FKEAJLV9hISoQRhwghLiAjYwALgDb1/q6wHtlmdkM5wEHsMMdIBSuAuFwFWCBRy6xO/O6bLUDIktrW0ZtkfsztbbIDlc7CAWXS2oHYWQ68AB5cxsZKj/ZQgAAAABJRU5ErkJggg==" />
+                    </span>
+                    <span class="text">1992-1997</span></a>
+                </li>
+                <li>
+                  <a href="#" class="dd_menu_a">
+                    <span class="icon">
+                      <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAJZJREFUSEvt1EEKgDAQA8D0Z/5EfZn6UiXQghRsk6W96clDm8HNYsLkJ03Oxw90J6yO6ARwA9i7idUBBWD4mu/x3UJcgI6FKEAJLV9hISoQRhwghLiAjYwALgDb1/q6wHtlmdkM5wEHsMMdIBSuAuFwFWCBRy6xO/O6bLUDIktrW0ZtkfsztbbIDlc7CAWXS2oHYWQ68AB5cxsZKj/ZQgAAAABJRU5ErkJggg==" />
+                    </span>
+                    <span class="text">1998-2003</span></a>
+                </li>
+                <li>
+                  <a href="#" class="dd_menu_a">
+                    <span class="icon">
+                      <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAJZJREFUSEvt1EEKgDAQA8D0Z/5EfZn6UiXQghRsk6W96clDm8HNYsLkJ03Oxw90J6yO6ARwA9i7idUBBWD4mu/x3UJcgI6FKEAJLV9hISoQRhwghLiAjYwALgDb1/q6wHtlmdkM5wEHsMMdIBSuAuFwFWCBRy6xO/O6bLUDIktrW0ZtkfsztbbIDlc7CAWXS2oHYWQ68AB5cxsZKj/ZQgAAAABJRU5ErkJggg==" />
+                    </span>
+                    <span class="text">2004-2009</span></a>
+                </li>
+                <li>
+                  <a href="#" class="dd_menu_a">
+                    <span class="icon">
+                      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAJZJREFUSEvt1EEKgDAQA8D0Z/5EfZn6UiXQghRsk6W96clDm8HNYsLkJ03Oxw90J6yO6ARwA9i7idUBBWD4mu/x3UJcgI6FKEAJLV9hISoQRhwghLiAjYwALgDb1/q6wHtlmdkM5wEHsMMdIBSuAuFwFWCBRy6xO/O6bLUDIktrW0ZtkfsztbbIDlc7CAWXS2oHYWQ68AB5cxsZKj/ZQgAAAABJRU5ErkJggg==" />
+                    </span>
+                    <span class=" text">2010-2015
+                    </span></a>
+                </li>
+          </li>
+      </div>
 
-      
-    </header>
+
+      <li><a href="#" class="a_parent">
+          <span class="icon">
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAFxJREFUSEtjZKAxYKSx+QyjFhAM4eEZRP8J+hu/ApRQwRZENLeAQg+gah/wSCY2uHA6lJAPaG4BxfFByAd0tQA9uIhyHFGKoN6guQVkBRcpPhi1gKwQIKhp6McBACZ4Bhljo5edAAAAAElFTkSuQmCC" />
+          </span>
+          <span class="text">ORGANIZE</span></a>
+      </li>
+      <li>
+        <a href="#" class="dd_menu_a">
+          <span class="icon">
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAPpJREFUSEvNleERATEQhb+rgBKoABWgElSCSlAJJVABJVAB88yeucslN5Jz5vInySTzXvbtvk1GyyNrGZ9OE5yBkSmg9cSnRiiCp10Onc+AowM4B04uSSrBHlgAWwNcAwdg+QuCPnAFNA8NUPu77TV/RkoEeuUuUH0rQNE1IpDO0wCBzpSLZIKByfMAtM7lkFw3oGcyaf0esRJtgFBCi4nXvSSCaOPHRvAXgtyEPrKKo1MiqCO4AOMmVeS+WtWjliFQgauFBI0WZSBzci24r0x9JBV3fgse8kGRpBF4ndHyrljqK5aA4j/gq6RS4aT8aK0TRJktJYJuEbwAPgE9GcNgRXIAAAAASUVORK5CYII=" />
+          </span>
+          <span class="text">A-Z</span></a>
+      </li>
+      <li>
+        <a href="#" class="dd_menu_a">
+          <span class="icon">
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAQ1JREFUSEvNleERATEQhT8VUAIVoAJUgkpQCSqhBCqgBCpg3kxi4uwel7ubkT/JJTvvS152cx1abp2W9flrwAkYBgc0HltueCfYAQ9g6Vg4BQ6FtRlwLMZbAInPQ6DGFiTGbELcCtgDi2+AVDzGFiE94AKoH4Qgfd/Ct/pXS09giVsQ7XLrWKfTSscEpPPyX82yUD5PHIDWdBfZgH6w5w5oHO2QXVegG2zS2N2hFrwTrAHvQtOLV1wWwHHGn/bqoOwOKkFyABFugT4qumnAGRjVyaLirpU9ejIkKnE9IW6h/VoHMe6ruFdIZWlaSTwX8NPO69RB+h+wMuktcXL+aK0DGim0SiJlwTkWVYI/AUAdPhkYvnxpAAAAAElFTkSuQmCC" />
+          </span>
+          <span class="text">Z-A</span></a>
+      </li>
+      </ul>
+
+  </header>
   <figure class="banner"></figure>
 
 
-    <main id="all_movies">
-      <section class="movies">
-        <img src="" alt="poster" class="poster">
-        <h2 class="title">title</h2>
-        <p>año</p>
-      </section>
-    </main>
+  <main id="all_movies" class="todo">
+    <section class="movies">
+      <img src="" alt="poster" class="poster">
+      <h2 class="title">title</h2>
+      <p>año</p>
+    </section>
+  </main>
+
+<main id="all_fantasy">
+  <section class="genre_fantasy">
+    <img src="" alt="poster" class="poster">
+    <h2 class="title">title</h2>
+    <p>año</p>
+  </section>
+</main>
     
-  </body>
+
+</body>
+
 </html>
