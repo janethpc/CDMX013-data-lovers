@@ -5,11 +5,11 @@ export  function films_fantasy(jsonData){
   });
 }
 
-export function films_genders(jsonData){
-  let genders_list= [];
+export function films_genders(jsonData){   //funcion por medio del cual se aplica metodo filter para que me regrese un array que contenga
+  let genders_list= [];                       //solo los generos contenidos en el objeto
   return jsonData.films.filter(function(data){
-    if(!genders_list.includes(data.genre)){
-      return genders_list.push(data.genre);
+    if(!genders_list.includes(data.genre)){    
+      return genders_list.push(data.genre);      
     }
   });
 } 

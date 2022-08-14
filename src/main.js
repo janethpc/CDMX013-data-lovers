@@ -1,11 +1,11 @@
 
-import { films_fantasy, films_genders } from './data.js';
-console.log(films_fantasy);
+import { films_fantasy, films_genders } from './data.js'; 
+
 
 import data from './data/ghibli/ghibli.js';
 console.log(data);
 
-let data1 = "";
+let data1 = "";   
 data.films.map((value) => {
   data1 += `<section class="movies">
         <img src="${value.poster}" alt="poster" class="poster">
