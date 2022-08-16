@@ -5,15 +5,21 @@ import { films_fantasy, films_genders } from './data.js';
 import data from './data/ghibli/ghibli.js';
 console.log(data);
 
-let data1 = "";   //se recupera el valor del objeto denominadado data, y se le aplica el metodo map
-data.films.map((value) => { //genera dinamicamente lo que se muestra en pantalla 
-  data1 += `<section class="movies">      
+const dataGhibli = data.films; //guarda el objeto en una variable
+
+function displayMovies(data) { //Función para mostrar todas las peliculas
+  document.getElementById("all_movies").innerHTML = ''; //Para vaciar el contenedor
+  let data1 = "";
+  data.forEach((value) => { //forEach itera sobre la data
+    data1 += `<section class="movies">
         <img src="${value.poster}" alt="poster" class="poster">
         <h2 class="title">${value.title}</h2>
         <p>${value.release_date}</p>
       </section>`;
-});
-document.getElementById("all_movies").innerHTML = data1;
+  });
+  document.getElementById("all_movies").innerHTML = data1;
+}
+displayMovies(dataGhibli); //muestra todas las peliculas
 
 let genders = "";  //crea dinamicamente lista con opciones de los generos dentro de films 
 const filteredGenders= films_genders(data);
@@ -85,5 +91,7 @@ only_onegender(data_filmsfantasy);
 function only_onegender(onlyFiltered) { //funcion que muestre en pantalla unicamente lo filtrado 
   document.getElementById("all_fantasy").innerHTML = onlyFiltered;
 }
+
+
 
 
