@@ -68,7 +68,7 @@ dd_menu_a.forEach(function (dd_menu_item) {
 
 
 function gender_allsFilms(category){     //se crea dinamicamente los elementos a mostrar dentro de la categoria de films 
-
+document.getElementById("all_movies").innerHTML= "";  //deja contenedor vacio 
   const filtered_allclass = films_fantasy(data, category); 
 console.log(filtered_allclass);
 let data_filmsfantasy = "";
@@ -82,7 +82,7 @@ filtered_allclass.map((value) => {
 only_onegender(data_filmsfantasy);
 }
 
-function only_onegender(onlyFiltered) {
+function only_onegender(onlyFiltered) { //funcion que muestre en pantalla unicamente lo filtrado 
   document.getElementById("all_fantasy").innerHTML = onlyFiltered;
 }
 

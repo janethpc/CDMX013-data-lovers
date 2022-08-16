@@ -90,7 +90,7 @@ header figure img{
 
 .navbar .dd_menu ul li a{
 	width: 180px;
-	background:  #f88f79;
+	background: rgba(246, 170, 147, 1);
 	text-align: left;	
 	padding: 20px;
 }
