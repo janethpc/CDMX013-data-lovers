@@ -15,7 +15,7 @@ data.films.map((value) => { //genera dinamicamente lo que se muestra en pantalla
 });
 document.getElementById("all_movies").innerHTML = data1;
 
-let genders = "";  //crea dinamicamente lista con opciones de los generos dentro del films 
+let genders = "";  //crea dinamicamente lista con opciones de los generos dentro de films 
 const filteredGenders= films_genders(data);
 filteredGenders.map((value) => {
   genders += `
@@ -68,7 +68,7 @@ dd_menu_a.forEach(function (dd_menu_item) {
 
 
 function gender_allsFilms(category){     //se crea dinamicamente los elementos a mostrar dentro de la categoria de films 
-  document.getElementById("all_fantasy").innerHTML="";
+
   const filtered_allclass = films_fantasy(data, category); 
 console.log(filtered_allclass);
 let data_filmsfantasy = "";
@@ -79,5 +79,11 @@ filtered_allclass.map((value) => {
   <p>${value.release_date}</p>
 </section>`;
 });
-document.getElementById("all_fantasy").innerHTML = data_filmsfantasy;
+only_onegender(data_filmsfantasy);
 }
+
+function only_onegender(onlyFiltered) {
+  document.getElementById("all_fantasy").innerHTML = onlyFiltered;
+}
+
+

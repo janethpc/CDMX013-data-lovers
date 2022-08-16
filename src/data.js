@@ -13,7 +13,7 @@ export function films_genders(jsonData){   //funcion por medio del cual se aplic
     }
   });
 } 
-  
+
   
 
 
