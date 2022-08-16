@@ -5,6 +5,8 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
 }
 
 body {
@@ -27,24 +29,85 @@ header figure img{
     margin-left: 50px;
    
 }
-.menu{
-    padding: 10px;
-    justify-content: flex-end;
-    margin-right: 50px;
-    font-weight: 500;
-    font-size: .9em;
+.wrapper{
+	width: 100%;
+	height: 100%
 }
 
-.menu li{
-    display: inline-block;
-    list-style: none;
-    text-transform: uppercase;
-    padding: 0 20px; 
+.navbar{
+	width: 100%;
+	height: 60px;
+	background: #f88f79;
 }
 
-.menu li a{
-    text-decoration: none;
+.navbar > ul{
+	display: flex;
+	justify-content: center;	
+}
+
+.navbar ul li{
+	position: relative;
+}
+
+.navbar ul li a{
+	display: block;
     color: black;
+    height: 60px;
+    width: 180px;
+    text-align: center;
+    padding: 20px 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.navbar ul > li a{
+	margin-right: 1px;
+}
+
+.navbar ul > li:last-child a{
+	margin-right: 0;
+}
+
+.navbar ul li a .icon {
+    width: 25px;
+    display: inline-block;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.a_parent.active,
+.navbar .dd_menu ul li a:hover,
+.navbar .dd_menu ul li a.active{
+	background: #b9d3b0;
+}
+
+.navbar .dd_menu{
+	position: absolute;
+	top: 80px;
+	left: 0;
+	display: none;
+}
+
+.navbar .dd_menu ul li a{
+	width: 180px;
+	background: rgba(246, 170, 147, 1);
+	text-align: left;	
+	padding: 20px;
+}
+
+.navbar .dd_menu:before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    border: 15px solid;
+    border-color: transparent transparent  #f88f79 transparent;
+}
+
+.navbar ul li a.a_parent.active + .dd_menu{
+	display: block;
 }
 
 .banner{
@@ -56,6 +119,13 @@ header figure img{
 }
 
 #all_movies{
+    margin-top: 5em;
+    display: flex;
+    justify-content: space-around; 
+    flex-wrap: wrap; 
+}
+
+#all_fantasy{
     margin-top: 5em;
     display: flex;
     justify-content: space-around; 
