@@ -5,9 +5,9 @@ import { films_fantasy, films_genders } from './data.js';
 import data from './data/ghibli/ghibli.js';
 console.log(data);
 
-let data1 = "";   
-data.films.map((value) => {
-  data1 += `<section class="movies">
+let data1 = "";   //se recupera el valor del objeto denominadado data, y se le aplica el metodo map
+data.films.map((value) => { //genera dinamicamente lo que se muestra en pantalla 
+  data1 += `<section class="movies">      
         <img src="${value.poster}" alt="poster" class="poster">
         <h2 class="title">${value.title}</h2>
         <p>${value.release_date}</p>
@@ -15,22 +15,7 @@ data.films.map((value) => {
 });
 document.getElementById("all_movies").innerHTML = data1;
 
-const filtered_resources = films_fantasy(data);
-console.log(filtered_resources);
-
-
-let data_filmsfantasy = "";
-filtered_resources.map((value) => {
-  data_filmsfantasy += `<section class="genre_fantasy">
-  <img src="${value.poster}" alt="poster" class="poster">
-  <h2 class="title">${value.title}</h2>
-  <p>${value.release_date}</p>
-</section>`;
-});
-document.getElementById("all_fantasy").innerHTML = data_filmsfantasy;
-
-
-let genders = "";
+let genders = "";  //crea dinamicamente lista con opciones de los generos dentro del films 
 const filteredGenders= films_genders(data);
 filteredGenders.map((value) => {
   genders += `
@@ -42,24 +27,25 @@ filteredGenders.map((value) => {
 });
 document.getElementById("gender_list").innerHTML= genders;
 
-//codigo tomado de stackoverflow necesito investigar que hace exactamente
+//codigo tomado de stackoverflow necesito investigar que hace exactamente (escuchar eventos para listas dinamicas)
 function getEventTarget(e) { 
   e = e || window.event; 
   return e.target || e.srcElement;
 };
 
-let gender_ul= document.getElementById("gender_list");
+let gender_ul= document.getElementById("gender_list"); //asignar la funcion de evento a la lista dinamica
 gender_ul.onclick=function(event){
   let target= getEventTarget(event);
   console.log(target.innerHTML);
+  gender_allsFilms(target.innerHTML);
 };
 
-var a_parent = document.querySelectorAll(".a_parent");
+//seccion para hacer dinamica la <nav></nav>
+var a_parent = document.querySelectorAll(".a_parent"); 
 var dd_menu_a = document.querySelectorAll(".dd_menu_a");
-var dd_menu_a_spam = document.querySelectorAll(".dd_menu_a_spam");
+
 
 a_parent.forEach(function (aitem) {
-
   aitem.addEventListener("click", function () {
     a_parent.forEach(function (aitem) {
       aitem.classList.remove("active");
@@ -72,21 +58,26 @@ a_parent.forEach(function (aitem) {
 })
 
 dd_menu_a.forEach(function (dd_menu_item) {
-
   dd_menu_item.addEventListener("click", function () {
     dd_menu_a.forEach(function (dd_menu_item) {
       dd_menu_item.classList.remove("active");
     })
     dd_menu_item.classList.add("active");
   })
-})
+}) //termina seccion que hace "funcional" el nav 
 
-dd_menu_a_spam.forEach(function (texitem) {
 
-  texitem.addEventListener("click", function () {
-    dd_menu_a_spam.forEach(function (texitem) {
-      texitem.classsection.add("active");
-    })
-    dd_menu_a_spam.classmain.remove("active");
-  })
-})
+function gender_allsFilms(category){     //se crea dinamicamente los elementos a mostrar dentro de la categoria de films 
+  document.getElementById("all_fantasy").innerHTML="";
+  const filtered_allclass = films_fantasy(data, category); 
+console.log(filtered_allclass);
+let data_filmsfantasy = "";
+filtered_allclass.map((value) => {
+  data_filmsfantasy += `<section class="genre_fantasy">
+  <img src="${value.poster}" alt="poster" class="poster">
+  <h2 class="title">${value.title}</h2>
+  <p>${value.release_date}</p>
+</section>`;
+});
+document.getElementById("all_fantasy").innerHTML = data_filmsfantasy;
+}

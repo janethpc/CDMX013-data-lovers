@@ -1,12 +1,12 @@
 
-export  function films_fantasy(jsonData){
+export  function films_fantasy(jsonData, category){
   return jsonData.films.filter(function(data){
-    return data.genre == 'fantasy';
+    return data.genre == category;
   });
 }
 
 export function films_genders(jsonData){   //funcion por medio del cual se aplica metodo filter para que me regrese un array que contenga
-  let genders_list= [];                       //solo los generos contenidos en el objeto
+  let genders_list= [];                       //solo los generos contenidos en el objeto main.js:18-28;
   return jsonData.films.filter(function(data){
     if(!genders_list.includes(data.genre)){    
       return genders_list.push(data.genre);      
@@ -14,13 +14,6 @@ export function films_genders(jsonData){   //funcion por medio del cual se aplic
   });
 } 
   
-//Array.reduce(callback(acumulador, valorActual[,
-//indice[, array]])[, valorInicial])
-
-
-
-  //document.getElementById("all_movies").innerHTML = data_fantasyFilms;
-    //console.log(data_fantasyFilms);
   
 
 
