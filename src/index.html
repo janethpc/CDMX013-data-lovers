@@ -13,23 +13,19 @@
       <h1><img src="images/logo-ghibli.png" alt="logo"></h1>
     </figure>
 
-    <div class="wrapper">
+    
       <nav class="navbar">
-        <ul>
-          <li><a href="#" class="a_parent">
-              <span class="icon">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAGJJREFUSEvt1TEOABAQRFHuf2gaFNu8KGwiWZ0M/s5MobfHqz9+v6UDxnK0wXsvo/H8GTw6SANoYul0oAekE1AdMCJlLJ2A6oARKWPpBFQHjEgZSyfg3w5k/VpP/5OvJ9SFCfuGJhkJgoRBAAAAAElFTkSuQmCC" />
-              </span>
+        <ul> <!--lista general 1.0-->
+          <li><a href="#" class="a_parent"> <!--lista 1.1--> 
               <span class="text" id="text">FILMS</span> </a>
             <div class="dd_menu">
-              <ul id="gender_list"> </ul>
+              <ul id="gender_list"> </ul> <!--lista 1.2-->
             </div>
           </li> <!--lista generada dinamicamente en mains.js: --> 
           <li><a href="#" class="a_parent">
             <span class="text" id="text">YEARS</span> </a>
             <div class="dd_menu">
               <ul id="gender_list"> 
-                <li class="filterByDates" data-start="1980" data-end="1985"><a>1980 - 1985</a></li>
                 <li class="filterByDates" data-start="1986" data-end="1990"><a>1986 - 1990</a></li>
                 <li class="filterByDates" data-start="1991" data-end="1995"><a>1991 - 1995</a></li>
                 <li class="filterByDates" data-start="1996" data-end="2000"><a>1996 - 2000</a></li>
@@ -50,7 +46,7 @@
           </li>
         </ul> 
       </nav>
-    </div>  <!--termina div de todo el navbar-->
+      <!--termina div de todo el navbar-->
 
   </header>
   <figure class="banner"></figure>
@@ -62,15 +58,16 @@
       <h2 class="title">title</h2>
       <p>año</p>
     </section>
-  </main>
-
-   <main id="all_fantasy"> 
-   <!--  <section class="genre_fantasy">
+    <section class="genre_fantasy">
       <img src="" alt="poster" class="poster">
       <h2 class="title">title</h2>
       <p>año</p>
-    </section> -->
-  </main> 
+    </section> 
+  </main>
+
+   
+    
+  
 
   <script src="main.js" type="module"></script>
 </body>
