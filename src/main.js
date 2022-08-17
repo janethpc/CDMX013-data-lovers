@@ -25,8 +25,7 @@ const filteredGenders= films_genders(data);
 filteredGenders.map((value) => {
   genders += `
   <li>
-    <a href="#" class="dd_menu_a">
-    <span id="menu_films">${value.genre}</span></a>
+    <a href="#" class="dd_menu_a" id="menu_films">${value.genre}</a>
   </li>
   `;
 });
@@ -48,6 +47,7 @@ gender_ul.onclick=function(event){
 //seccion para hacer dinamica la <nav></nav>
 var a_parent = document.querySelectorAll(".a_parent"); 
 var dd_menu_a = document.querySelectorAll(".dd_menu_a");
+
 
 
 a_parent.forEach(function (aitem) {
@@ -88,7 +88,7 @@ only_onegender(data_filmsfantasy);
 }
 
 function only_onegender(onlyFiltered) { //funcion que muestre en pantalla unicamente lo filtrado 
-  document.getElementById("all_fantasy").innerHTML = onlyFiltered;
+  document.getElementById("all_movies").innerHTML = onlyFiltered;
 }
 
 const datesOptions = document.getElementsByClassName('filterByDates');
