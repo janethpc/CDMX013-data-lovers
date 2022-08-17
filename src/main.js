@@ -1,5 +1,4 @@
-
-import { films_fantasy, films_genders } from './data.js'; 
+import { films_fantasy, films_genders, dateFilter } from './data.js'; 
 
 
 import data from './data/ghibli/ghibli.js';
@@ -92,6 +91,10 @@ function only_onegender(onlyFiltered) { //funcion que muestre en pantalla unicam
   document.getElementById("all_fantasy").innerHTML = onlyFiltered;
 }
 
-
-
-
+const datesOptions = document.getElementsByClassName('filterByDates');
+Array.from(datesOptions).forEach(datesOptions => {
+  datesOptions.addEventListener('click', function () {
+    let pruebaFuncion = dateFilter(dataGhibli, datesOptions.dataset.start, datesOptions.dataset.end);
+    displayMovies(pruebaFuncion);
+  })
+})
