@@ -1,18 +1,14 @@
-// estas funciones son de ejemplo
+export  function films_fantasy(jsonData, category){
+  return jsonData.films.filter(function(data){
+    return data.genre == category;
+  });
+}
 
-import ghibli from "./data/ghibli/ghibli.js";
-
-//import films from "./data/ghibli/ghibli.js";
-
-
-//const filterDate = Object.entries(films)
-//filter(ghibli.films.release_date);
-
-console.log(Object.keys(films.realese_date(ghibli)));
-
-
-/*
-export const anotherExample = () => {
-  return 'OMG';
-};
-*/
+export function films_genders(jsonData){   //funcion por medio del cual se aplica metodo filter para que me regrese un array que contenga
+  let genders_list= [];                       //solo los generos contenidos en el objeto main.js:18-28;
+  return jsonData.films.filter(function(data){
+    if(!genders_list.includes(data.genre)){    
+      return genders_list.push(data.genre);      
+    }
+  });
+} 
