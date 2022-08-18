@@ -20,3 +20,5 @@ export function dateFilter(data, minYear, maxYear) { //función recibe la data, 
   return filterYear;
 }
 
+
+
