@@ -9,7 +9,7 @@ const filteredGenders= films_genders(data);
 filteredGenders.map((value) => {
   genders += `
   <li>
-    <a href="#all_movies" class="dd_menu_a" id="menu_films">${value.genre}</a>
+    <a href="#" class="dd_menu_a" id="menu_films">${value.genre}</a>
   </li>
   `;
 });
@@ -46,14 +46,17 @@ a_parent.forEach(function (aitem) {
   })
 })
 
-dd_menu_a.forEach(function (dd_menu_item) {
-  dd_menu_item.addEventListener("click", function () {
+dd_menu_a.forEach(function (aitem) {
+  aitem.addEventListener("blur", function () {
+    a_parent.forEach(function (aitem) {
+      aitem.classList.remove("active");
+    })
     dd_menu_a.forEach(function (dd_menu_item) {
       dd_menu_item.classList.remove("active");
-    })
-    dd_menu_item.classList.add("active");
+})
   })
-}) //termina seccion que hace "funcional" el nav 
+})
+ //termina seccion que hace "funcional" el nav 
 
 function displayMovies(data) { //Función para mostrar todas las peliculas
   document.getElementById("all_movies").innerHTML = ''; //Para vaciar el contenedor
@@ -74,25 +77,16 @@ function gender_allsFilms(category){     //se crea dinamicamente los elementos a
 document.getElementById("all_movies").innerHTML= "";  //deja contenedor vacio 
   const filtered_allclass = films_fantasy(data, category); 
 console.log(filtered_allclass);
-let data_filmsfantasy = "";
-filtered_allclass.map((value) => {
-  data_filmsfantasy += `<section class="genre_fantasy">
-  <img src="${value.poster}" alt="poster" class="poster">
-  <h2 class="title">${value.title}</h2>
-  <p>${value.release_date}</p>
-</section>`;
-});
-only_onegender(data_filmsfantasy);
+  displayMovies(filtered_allclass);
 }
 
-function only_onegender(onlyFiltered) { //funcion que muestre en pantalla unicamente lo filtrado 
-  document.getElementById("all_movies").innerHTML = onlyFiltered;
-}
+
 
 const datesOptions = document.getElementsByClassName('filterByDates');
-Array.from(datesOptions).forEach(datesOptions => {
-  datesOptions.addEventListener('click', function () {
-    let pruebaFuncion = dateFilter(dataGhibli, datesOptions.dataset.start, datesOptions.dataset.end);
+Array.from(datesOptions).forEach(dateOption => {
+  dateOption.addEventListener('click', function () {
+    let pruebaFuncion = dateFilter(dataGhibli, dateOption.dataset.start, dateOption.dataset.end);
     displayMovies(pruebaFuncion);
   })
 })
+
