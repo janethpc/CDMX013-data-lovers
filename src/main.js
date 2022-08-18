@@ -9,7 +9,7 @@ const filteredGenders= films_genders(data);
 filteredGenders.map((value) => {
   genders += `
   <li>
-    <a href="#" class="dd_menu_a" id="menu_films">${value.genre}</a>
+    <a href="#all_movies" class="dd_menu_a" id="menu_films">${value.genre}</a>
   </li>
   `;
 });
