@@ -71,8 +71,8 @@ header figure img{
     display: inline-block;
 }
 
-.navbar ul li a:hover,
-.navbar ul li a.a_parent.active,
+/*.navbar ul li a:hover,
+.navbar ul li a.a_parent.active,*/
 .navbar .dd_menu ul li a:hover,
 .navbar .dd_menu ul li a.active{
 	background: #81BDA4;

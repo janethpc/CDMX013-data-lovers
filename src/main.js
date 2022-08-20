@@ -1,8 +1,7 @@
-import { films_fantasy, films_genders, dateFilter } from './data.js'; 
+import { films_fantasy, films_genders, dateFilter, orderAscending, orderDescending } from './data.js'; 
 import data from './data/ghibli/ghibli.js';
 
 const dataGhibli = data.films; //guarda el objeto en una variable
-
 
 let genders = "";  //crea dinamicamente lista con opciones de los generos dentro de films 
 const filteredGenders= films_genders(data);
@@ -24,15 +23,12 @@ function getEventTarget(e) {
 let gender_ul= document.getElementById("gender_list"); //asignar la funcion de evento a la lista dinamica
 gender_ul.onclick=function(event){
   let target= getEventTarget(event);
-  console.log(target.innerHTML);
   gender_allsFilms(target.innerHTML);
 };
 
 //seccion para hacer dinamica la <nav></nav>
 var a_parent = document.querySelectorAll(".a_parent"); 
 var dd_menu_a = document.querySelectorAll(".dd_menu_a");
-
-
 
 a_parent.forEach(function (aitem) {
   aitem.addEventListener("click", function () {
@@ -76,11 +72,8 @@ displayMovies(dataGhibli); //muestra todas las peliculas
 function gender_allsFilms(category){     //se crea dinamicamente los elementos a mostrar dentro de la categoria de films 
 document.getElementById("all_movies").innerHTML= "";  //deja contenedor vacio 
   const filtered_allclass = films_fantasy(data, category); 
-console.log(filtered_allclass);
   displayMovies(filtered_allclass);
 }
-
-
 
 const datesOptions = document.getElementsByClassName('filterByDates');
 Array.from(datesOptions).forEach(dateOption => {
@@ -89,4 +82,21 @@ Array.from(datesOptions).forEach(dateOption => {
     displayMovies(pruebaFuncion);
   })
 })
+
+const orderByTitle= document.getElementById('order_atoz');
+orderByTitle.addEventListener('click', function () {
+  let orderData = orderAscending(dataGhibli);
+  displayMovies(orderData);
+})
+
+const orderTitles = document.getElementById('order_ztoa');
+orderTitles.addEventListener('click',function(){
+  let zToA = orderDescending(dataGhibli);
+  displayMovies(zToA);
+})
+
+
+
+
+
 
