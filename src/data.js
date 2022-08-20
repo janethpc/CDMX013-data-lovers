@@ -20,5 +20,29 @@ export function dateFilter(data, minYear, maxYear) { //función recibe la data, 
   return filterYear;
 }
 
+export function orderAscending(data){
+  let compareNames = data.sort((a,b)=> {
+    if (a.title < b.title){
+      return -1
+    }
+    if (a.title > b.title){
+      return 1
+    }
+    return 0
+  }) 
+  return compareNames;
+  } 
+
+  export function orderDescending(data){
+    let backwards = '';
+    return data.reverse(backwards);
+    }
+    
+  
+
+
+  
+  
+
 
 
