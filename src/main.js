@@ -1,4 +1,4 @@
-import { films_fantasy, films_genders, dateFilter, orderAscending, orderDescending } from './data.js'; 
+import { films_fantasy, films_genders, dateFilter, orderAscending, orderDescending, ascending_years, descendingYears} from './data.js'; 
 import data from './data/ghibli/ghibli.js';
 
 const dataGhibli = data.films; //guarda el objeto en una variable
@@ -93,6 +93,18 @@ const orderTitles = document.getElementById('order_ztoa');
 orderTitles.addEventListener('click',function(){
   let zToA = orderDescending(dataGhibli);
   displayMovies(zToA);
+})
+
+const ordenAños= document.getElementById('recientes');
+ordenAños.addEventListener('click',function(){
+  var newYears = ascending_years(dataGhibli);
+  displayMovies(newYears);
+})
+
+const order_Oldyears= document.getElementById('antiguas');
+order_Oldyears.addEventListener('click',function(){
+  let oldys= descendingYears(dataGhibli);
+  displayMovies(oldys);
 })
 
 
