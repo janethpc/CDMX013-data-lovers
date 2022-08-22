@@ -37,8 +37,32 @@ export function orderAscending(data){
     let backwards = '';
     return data.reverse(backwards);
     }
-    
   
+export function ascending_years(jsonData){
+      let recentMore= jsonData.sort((a, b) => {
+        if (a.release_date > b.release_date){
+          return -1
+        }
+        if(a.release_date < b.release_date) {
+          return 1
+        }
+      })
+      return recentMore;
+    };
+
+export function descendingYears(jsonData){
+  let old= jsonData.sort((a, b) => {
+    if (a.release_date < b.release_date){
+      return -1
+    }
+    if(a.release_date > b.release_date) {
+      return 1
+    }
+  })
+  return old;
+};
+
+
 
 
   
