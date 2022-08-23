@@ -1,10 +1,10 @@
-import { films_fantasy, films_genders, dateFilter, orderAscending, orderDescending, ascending_years, descendingYears} from './data.js'; 
+import { filterByCategory, films_genders, dateFilter, ascendingOrder, descendingOrder, ascendingYears, descendingYears } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
 const dataGhibli = data.films; //guarda el objeto en una variable
 
 let genders = "";  //crea dinamicamente lista con opciones de los generos dentro de films 
-const filteredGenders= films_genders(data);
+const filteredGenders = films_genders(data);
 filteredGenders.map((value) => {
   genders += `
   <li>
@@ -12,22 +12,22 @@ filteredGenders.map((value) => {
   </li>
   `;
 });
-document.getElementById("gender_list").innerHTML= genders;
+document.getElementById("gender_list").innerHTML = genders;
 
 //codigo tomado de stackoverflow necesito investigar que hace exactamente (escuchar eventos para listas dinamicas)
-function getEventTarget(e) { 
-  e = e || window.event; 
+function getEventTarget(e) {
+  e = e || window.event;
   return e.target || e.srcElement;
 }
 
-let gender_ul= document.getElementById("gender_list"); //asignar la funcion de evento a la lista dinamica
-gender_ul.onclick=function(event){
-  let target= getEventTarget(event);
+let gender_ul = document.getElementById("gender_list"); //asignar la funcion de evento a la lista dinamica
+gender_ul.onclick = function (event) {
+  let target = getEventTarget(event);
   gender_allsFilms(target.innerHTML);
 };
 
 //seccion para hacer dinamica la <nav></nav>
-var a_parent = document.querySelectorAll(".a_parent"); 
+var a_parent = document.querySelectorAll(".a_parent");
 var dd_menu_a = document.querySelectorAll(".dd_menu_a");
 
 a_parent.forEach(function (aitem) {
@@ -49,10 +49,10 @@ dd_menu_a.forEach(function (aitem) {
     })
     dd_menu_a.forEach(function (dd_menu_item) {
       dd_menu_item.classList.remove("active");
-})
+    })
   })
 })
- //termina seccion que hace "funcional" el nav 
+//termina seccion que hace "funcional" el nav 
 
 function displayMovies(data) { //Función para mostrar todas las peliculas
   document.getElementById("all_movies").innerHTML = ''; //Para vaciar el contenedor
@@ -69,46 +69,43 @@ function displayMovies(data) { //Función para mostrar todas las peliculas
 displayMovies(dataGhibli); //muestra todas las peliculas
 
 
-function gender_allsFilms(category){     //se crea dinamicamente los elementos a mostrar dentro de la categoria de films 
-document.getElementById("all_movies").innerHTML= "";  //deja contenedor vacio 
-  const filtered_allclass = films_fantasy(data, category); 
+function gender_allsFilms(category) {     //se crea dinamicamente los elementos a mostrar dentro de la categoria de films 
+  document.getElementById("all_movies").innerHTML = "";  //deja contenedor vacio 
+  const filtered_allclass = filterByCategory(data, category);
   displayMovies(filtered_allclass);
 }
 
 const datesOptions = document.getElementsByClassName('filterByDates');
 Array.from(datesOptions).forEach(dateOption => {
   dateOption.addEventListener('click', function () {
-    let pruebaFuncion = dateFilter(dataGhibli, dateOption.dataset.start, dateOption.dataset.end);
-    displayMovies(pruebaFuncion);
+    let moviesByDate = dateFilter(dataGhibli, dateOption.dataset.start, dateOption.dataset.end);
+    displayMovies(moviesByDate);
   })
 })
 
-const orderByTitle= document.getElementById('order_atoz');
+const orderByTitle = document.getElementById('order_atoz');
 orderByTitle.addEventListener('click', function () {
-  let orderData = orderAscending(dataGhibli);
+  let orderData = ascendingOrder(dataGhibli);
   displayMovies(orderData);
 })
 
 const orderTitles = document.getElementById('order_ztoa');
-orderTitles.addEventListener('click',function(){
-  let zToA = orderDescending(dataGhibli);
+orderTitles.addEventListener('click', function () {
+  let zToA = descendingOrder(dataGhibli);
   displayMovies(zToA);
 })
 
-const ordenAños= document.getElementById('recientes');
-ordenAños.addEventListener('click',function(){
-  var newYears = ascending_years(dataGhibli);
+const ordenAños = document.getElementById('recientes');
+ordenAños.addEventListener('click', function () {
+  var newYears = ascendingYears(dataGhibli);
   displayMovies(newYears);
 })
 
-const order_Oldyears= document.getElementById('antiguas');
-order_Oldyears.addEventListener('click',function(){
-  let oldys= descendingYears(dataGhibli);
+const order_Oldyears = document.getElementById('antiguas');
+order_Oldyears.addEventListener('click', function () {
+  let oldys = descendingYears(dataGhibli);
   displayMovies(oldys);
 })
-
-
-
 
 
 

@@ -16,16 +16,16 @@
       <nav class="navbar">
         <ul> <!--lista general 1.0-->
           <li><a href="#" class="a_parent"> <!--lista 1.1--> 
-              <span class="text" id="text">FILMS</span> </a>
+              <span>FILMS</span></a>
             <div class="dd_menu">
               <ul id="gender_list"> </ul> <!--lista 1.2-->
             </div>
           </li> <!--lista generada dinamicamente en mains.js: --> 
           <li><a href="#" class="a_parent">
-            <span class="text">YEARS</span> </a>
+            <span class="text">YEARS</span></a>
             <div class="dd_menu">
               <ul> 
-                <li class="filterByDates" data-start="1986" data-end="1990"><a href="#" class="dd_menu_a" >1986 - 1990</a></li>
+                <li class="filterByDates" data-start="1986" data-end="1990"><a href="#" class="dd_menu_a">1986 - 1990</a></li>
                 <li class="filterByDates" data-start="1991" data-end="1995"><a href="#" class="dd_menu_a">1991 - 1995</a></li>
                 <li class="filterByDates" data-start="1996" data-end="2000"><a href="#" class="dd_menu_a">1996 - 2000</a></li>
                 <li class="filterByDates" data-start="2001" data-end="2005"><a href="#" class="dd_menu_a">2001 - 2005</a></li>
@@ -35,7 +35,7 @@
             </div>
           </li>
           <li><a href="#" class="a_parent">
-            <span class="text" >ORDENAR</span> </a>
+            <span>ORDENAR</span> </a>
             <div class="dd_menu">
               <ul> 
                 <li id="order_atoz"><a href="#" class="dd_menu_a">A-Z</a></li>
@@ -50,12 +50,13 @@
       <!--termina div de todo el navbar-->
 
   </header>
-  <figure class="banner"></figure>
+  <figure id="banner"></figure>
 
- <main id="all_movies" class="todo"> 
+ <main id="all_movies"> 
     <section class="movies">
     </section>
   </main>
+ 
 
   <script src="main.js" type="module"></script>
 </body>
