@@ -70,8 +70,9 @@ header figure img{
 }
 
 .navbar ul li a .icon {
-    width: 25px;
+    width: 60px;
     display: inline-block;
+    margin-top: -20px;
 }
 
 /*.navbar ul li a:hover,
