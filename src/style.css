@@ -38,11 +38,12 @@ header figure img{
 .navbar > ul{
 	display: flex;
 	justify-content: center;	
-    list-style: none;
+   
 }
 
 .navbar ul li{
 	position: relative;
+    list-style: none;
 }
 
 .navbar ul li a{
@@ -89,7 +90,8 @@ header figure img{
 	width: 180px;
 	background: rgba(246, 170, 147, 1);
 	text-align: center;	
-	padding: 20px;
+	padding: 19px;
+    list-style:none;
 }
 
 .navbar .dd_menu:before {

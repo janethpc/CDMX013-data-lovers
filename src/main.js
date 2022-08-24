@@ -43,7 +43,7 @@ a_parent.forEach(function (aitem) {
 })
 
 dd_menu_a.forEach(function (aitem) {
-  aitem.addEventListener("blur", function () {
+  aitem.addEventListener("mouseup", function () {
     a_parent.forEach(function (aitem) {
       aitem.classList.remove("active");
     })
