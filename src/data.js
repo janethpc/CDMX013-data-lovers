@@ -1,4 +1,4 @@
-export function films_genders(jsonData) {   //funcion por medio del cual se aplica metodo filter para que me regrese un array que contenga
+export function filmsGenders(jsonData) {   //funcion por medio del cual se aplica metodo filter para que me regrese un array que contenga
   let genders_list = [];                       //solo los generos contenidos en el objeto main.js:18-28;
   return jsonData.films.filter(function (data) {
     if (!genders_list.includes(data.genre)) {

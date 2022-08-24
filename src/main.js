@@ -1,10 +1,10 @@
-import { filterByCategory, films_genders, dateFilter, ascendingOrder, descendingOrder, ascendingYears, descendingYears } from './data.js';
+import { filterByCategory, filmsGenders, dateFilter, ascendingOrder, descendingOrder, ascendingYears, descendingYears } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
 const dataGhibli = data.films; //guarda el objeto en una variable
 
 let genders = "";  //crea dinamicamente lista con opciones de los generos dentro de films 
-const filteredGenders = films_genders(data);
+const filteredGenders = filmsGenders(data);
 filteredGenders.map((value) => {
   genders += `
   <li>

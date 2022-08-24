@@ -1,6 +1,13 @@
 import data from '../src/data/ghibli/ghibli.js';
 import { filterByCategory, dateFilter, ascendingOrder } from '../src/data.js';
 
+describe('data', () => {
+
+    it('should be an object', () => {
+      expect(typeof data).toBe('object');
+    });
+})
+
 describe('films',() => {
     it ('films by genres', () => {
         const dataGhibli = data;
