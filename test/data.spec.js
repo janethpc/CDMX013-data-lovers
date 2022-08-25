@@ -1,5 +1,5 @@
 import data from '../src/data/ghibli/ghibli.js';
-import { filterByCategory, dateFilter, ascendingOrder } from '../src/data.js';
+import { filterByCategory, dateFilter, ascendingOrder, ascendingYears, descendingOrder, descendingYears } from '../src/data.js';
 
 describe('data', () => {
 
@@ -33,6 +33,28 @@ describe('ascendingOrder',() => {
         const orderMovies = ascendingOrder([data.films[0],data.films[19]])
         expect(orderMovies).toEqual([data.films[0],data.films[19]])
         
+    })
+})
+
+describe('ascendingYears', () => {
+    it('order films by release date', () => {
+        const moreNewMovies = ascendingYears([2001, 2002, 2003, 2010, 2022])
+        expect(moreNewMovies).toEqual([2001, 2002, 2003, 2010, 2022])
+    })
+})
+
+describe('descendingOrder', () => {
+    it('Reverse a list of numbers from 0 to 9', () => {
+        const reversedNumbers = descendingOrder([5, 6, 7, 10, 15])
+        expect(reversedNumbers).toEqual([15, 10, 7, 6, 5])
+    })
+
+})
+
+describe('descendingYears', () => {
+    it('sort movies by oldest date', () => {
+        const oldestMovies = descendingYears([2001, 2002, 2003, 2004, 2005])
+        expect(oldestMovies).toEqual([2001, 2002, 2003, 2004, 2005])
     })
 })
 
