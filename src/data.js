@@ -13,6 +13,13 @@ export function filterByCategory(jsonData, category) {
   });
 }
 
+export function filterby_rtScore(jsonData){
+  const rtScore = jsonData.films.filter(function (data) {
+    return data.rt_socre;
+  })
+  return rtScore;
+}
+
 export function dateFilter(data, minYear, maxYear) { //función recibe la data, y los parametros del año de main.
   const filterYear = data.filter(function (data) {
     return (data.release_date >= minYear && data.release_date <= maxYear);

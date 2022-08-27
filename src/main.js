@@ -1,4 +1,4 @@
-import { filterByCategory, filmsGenders, dateFilter, ascendingOrder, descendingOrder, ascendingYears, descendingYears } from './data.js';
+import { filterByCategory, filmsGenders, dateFilter, ascendingOrder, descendingOrder, ascendingYears, descendingYears, filterby_rtScore } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
 const dataGhibli = data.films; //guarda el objeto en una variable
@@ -67,6 +67,14 @@ function displayMovies(data) { //Función para mostrar todas las peliculas
   document.getElementById("all_movies").innerHTML = data1;
 }
 displayMovies(dataGhibli); //muestra todas las peliculas
+
+function displayrt(data) {
+  let probarGrafica = "";
+  data.forEach((value) => {
+    probarGrafica += `<section class="">
+    <p>`
+  })
+}
 
 
 function gender_allsFilms(category) {     //se crea dinamicamente los elementos a mostrar dentro de la categoria de films 
