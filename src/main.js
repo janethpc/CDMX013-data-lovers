@@ -71,10 +71,14 @@ displayMovies(dataGhibli); //muestra todas las peliculas
 function displayrt(data) {
   let probarGrafica = "";
   data.forEach((value) => {
-    probarGrafica += `<section class="">
-    <p>`
-  })
+    probarGrafica += `<section class="ejemplo">
+    <h2 class="title" id="labels">${value.title}</h2>
+    <p id="datart_Score">${value.rt_score}</p>
+    </section>`;
+  });
+  console.log(probarGrafica);
 }
+displayrt(dataGhibli);
 
 
 function gender_allsFilms(category) {     //se crea dinamicamente los elementos a mostrar dentro de la categoria de films 

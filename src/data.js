@@ -13,6 +13,13 @@ export function filterByCategory(jsonData, category) {
   });
 }
 
+export function filtereby_rtScore(jsonData) {
+  const rtScore = jsonData.films.filter(function(data) {
+    return data.rt_socre;
+  })
+  return rtScore;
+}
+
 export function filterby_rtScore(jsonData){
   const rtScore = jsonData.films.filter(function (data) {
     return data.rt_socre;
