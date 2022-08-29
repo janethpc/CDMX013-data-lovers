@@ -1,4 +1,4 @@
-import { filterByCategory, filmsGenders, dateFilter, ascendingOrder, descendingOrder, ascendingYears, descendingYears, filterby_rtScore } from './data.js';
+import { filterByCategory, filmsGenders, dateFilter, ascendingOrder, descendingOrder, ascendingYears, descendingYears, } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
 const dataGhibli = data.films; //guarda el objeto en una variable
@@ -68,17 +68,36 @@ function displayMovies(data) { //Función para mostrar todas las peliculas
 }
 displayMovies(dataGhibli); //muestra todas las peliculas
 
-function displayrt(data) {
-  let probarGrafica = "";
-  data.forEach((value) => {
-    probarGrafica += `<section class="ejemplo">
-    <h2 class="title" id="labels">${value.title}</h2>
-    <p id="datart_Score">${value.rt_score}</p>
-    </section>`;
-  });
-  console.log(probarGrafica);
-}
-displayrt(dataGhibli);
+//area de grafica
+const ctx = document.getElementById('myChart').getContext('2d');
+
+
+const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['title1', 'title2', 'title3', 'title4'],
+        datasets: [{
+            label: 'Rotten Tomatoes',
+            data: [],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
 
 
 function gender_allsFilms(category) {     //se crea dinamicamente los elementos a mostrar dentro de la categoria de films 
