@@ -1,4 +1,4 @@
-import { filterByCategory, filmsGenders, dateFilter, ascendingOrder, descendingOrder, ascendingYears, descendingYears, } from './data.js';
+import { filterByCategory, filmsGenders, dateFilter, ascendingOrder, descendingOrder, ascendingYears, descendingYears, filterby_rtScore} from './data.js';
 import data from './data/ghibli/ghibli.js';
 
 const dataGhibli = data.films; //guarda el objeto en una variable
@@ -71,17 +71,24 @@ displayMovies(dataGhibli); //muestra todas las peliculas
 //area de grafica
 const ctx = document.getElementById('myChart').getContext('2d');
 
+function SoloGeneros(data)
+  let generoMujer = filterby_rtScore(data);
+  console.log(generoMujer);
+
+
+
+  
 
 const myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['title1', 'title2', 'title3', 'title4'],
+        labels: ['female', 'male' ],
         datasets: [{
             label: 'Rotten Tomatoes',
-            data: [],
+            data: ['95','97', '93','80'],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)'
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)',

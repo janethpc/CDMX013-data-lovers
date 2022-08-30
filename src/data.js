@@ -13,9 +13,9 @@ export function filterByCategory(jsonData, category) {
   });
 }
 
-export function filtereby_rtScore(jsonData) {
-  const rtScore = jsonData.films.filter(function(data) {
-    return data.rt_socre;
+export function filterby_rtScore(jsonData) {
+  const rtScore = jsonData.films.map(function(data) {
+    return data.people.gender;
   })
   return rtScore;
 }
