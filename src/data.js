@@ -13,12 +13,6 @@ export function filterByCategory(jsonData, category) {
   });
 }
 
-export function computerSet(datos){
-  let sumFamele = "";
-  if(!sumFamele.reduce(datos)) {
-    return datos((a, d) => (a[d] ? a[d] += 1 : a[d] = 1, a), {});
-  }
-}
 
 export function filterby_genderPeople(jsonData) {
   const allGenderPeople = jsonData.map(function(data) {
@@ -79,6 +73,14 @@ export function descendingYears(jsonData) {
   return old;
 }
 
+export function palabraRepetida(text){
+  let contadorPalabras = 1;
+  let unicasPalabras = [];
+  let almacenador_vecesRepetidas = [];
+
+  return text.split("").sort();
+}
+  console.log(texto)
 
 
 

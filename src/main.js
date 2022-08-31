@@ -1,4 +1,4 @@
-import { filterByCategory, filmsGenders, dateFilter, ascendingOrder, descendingOrder, ascendingYears, descendingYears, filterby_genderPeople, computerSet} from './data.js';
+import { filterByCategory, filmsGenders, dateFilter, ascendingOrder, descendingOrder, ascendingYears, descendingYears, filterby_genderPeople, palabraRepetida} from './data.js';
 import data from './data/ghibli/ghibli.js';
 
 const dataGhibli = data.films; //guarda el objeto en una variable
@@ -81,12 +81,8 @@ for (let i = 0; i < femaleAndMan.length; i++) {
 }
 console.log(sum);
 
-const NumerosRepetidos = computerSet(sum)
-console.log(NumerosRepetidos)
-
-
-
-  
+const palabraTexto = palabraRepetida(sum)
+console.log(palabraTexto)
 
 const myChart = new Chart(ctx, {
     type: 'bar',
