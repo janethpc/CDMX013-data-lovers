@@ -13,17 +13,6 @@ export function filterByCategory(jsonData, category) {
   });
 }
 
-
-export function filterby_genderPeople(jsonData) {
-  const allGenderPeople = jsonData.map(function(data) {
-    return data.people.map(function(data){
-      return data.gender;
-    });
-  })
-  return allGenderPeople;
-}
-
-
 export function dateFilter(data, minYear, maxYear) { //función recibe la data, y los parametros del año de main.
   const filterYear = data.filter(function (data) {
     return (data.release_date >= minYear && data.release_date <= maxYear);
@@ -51,7 +40,7 @@ export function descendingOrder(data) {
 
 export function ascendingYears(jsonData) {
   let recentMore = jsonData.sort((a, b) => {
-    if (a.release_date > b.release_date) {
+    if (parseInt(a.release_date) > parseInt(b.release_date)) {
       return -1
     }
     if (a.release_date < b.release_date) {
@@ -60,10 +49,10 @@ export function ascendingYears(jsonData) {
   })
   return recentMore;
 }
-
+  
 export function descendingYears(jsonData) {
   let old = jsonData.sort((a, b) => {
-    if (a.release_date < b.release_date) {
+    if (parseInt(a.release_date) > parseInt(b.release_date)) {
       return -1
     }
     if (a.release_date > b.release_date) {
@@ -71,6 +60,15 @@ export function descendingYears(jsonData) {
     }
   })
   return old;
+}
+
+export function filterby_genderPeople(jsonData) {
+  const allGenderPeople = jsonData.map(function(data) {
+    return data.people.map(function(data){
+      return data.gender;
+    });
+  })
+  return allGenderPeople;
 }
 
 export function palabraRepetida(text){
