@@ -1,4 +1,4 @@
-import { filterByCategory, filmsGenders, dateFilter, ascendingOrder, descendingOrder, ascendingYears, descendingYears, filterby_genderPeople, palabraRepetida} from './data.js';
+import { filterByCategory, filmsGenders, dateFilter, ascendingOrder, descendingOrder, ascendingYears, descendingYears, filterby_genderPeople, } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
 const dataGhibli = data.films; //guarda el objeto en una variable
@@ -68,6 +68,71 @@ function displayMovies(data) { //Función para mostrar todas las peliculas
 }
 displayMovies(dataGhibli); //muestra todas las peliculas
 
+
+function gender_allsFilms(category) {     //se crea dinamicamente los elementos a mostrar dentro de la categoria de films 
+  document.getElementById("all_movies").innerHTML = "";  //deja contenedor vacio 
+  const filtered_allclass = filterByCategory(data, category);
+  displayMovies(filtered_allclass);
+}
+
+const datesOptions = document.getElementsByClassName('filterByDates');
+Array.from(datesOptions).forEach(dateOption => {
+  dateOption.addEventListener('click', function () {
+    let moviesByDate = dateFilter(dataGhibli, dateOption.dataset.start, dateOption.dataset.end);
+    displayMovies(moviesByDate);
+  })
+})
+
+const orderByTitle = document.getElementById('order_atoz');
+orderByTitle.addEventListener('click', function () {
+  let orderData = ascendingOrder(dataGhibli);
+  displayMovies(orderData);
+})
+
+const orderTitles = document.getElementById('order_ztoa');
+orderTitles.addEventListener('click', function () {
+  let zToA = descendingOrder(dataGhibli);
+  displayMovies(zToA);
+})
+
+const ordenAños = document.getElementById('recientes');
+ordenAños.addEventListener('click', function () {
+  var newYears = ascendingYears(dataGhibli);
+  displayMovies(newYears);
+})
+
+const order_Oldyears = document.getElementById('antiguas');
+order_Oldyears.addEventListener('click', function () {
+  let oldys = descendingYears(dataGhibli);
+  displayMovies(oldys);
+})
+
+//AREA MODAL
+const modalC = document.querySelector('.modal-container');
+const modal = document.querySelector('.modal');
+const closeModal = document.querySelector('#close');
+const openModal = document.querySelectorAll('.poster');
+
+openModal.forEach(poster => {
+  poster.addEventListener('click', (e) =>{ poster.classList.toggle('modal-close');
+    //e.preventDefault(); // sirve para quitar # de un nuevo URL
+    //document.getElementById("mod").innerHTML = e.target.dataset.director + e.target.dataset.description;
+    const infoModal = `<section class="infoContainer">
+    <p class="modal_styles">Director: ${e.target.dataset.director}</p><br>
+    <p class="modal_styles">Description: ${e.target.dataset.description}</p>
+  </section>`;
+    document.getElementById("mod").innerHTML = infoModal;
+    modalC.style.visibility = 'visible';
+  });
+})
+
+closeModal.addEventListener('click', toClose)
+document.getElementsByClassName('modal-container')[0].addEventListener('click', toClose)
+function toClose() {
+  modal.classList.toggle('modal-close');
+  modalC.style.visibility = "hidden";
+}
+
 //area de grafica
 const ctx = document.getElementById('myChart').getContext('2d');
 
@@ -111,44 +176,6 @@ const myChart = new Chart(ctx, {
     }
 });
 
-
-function gender_allsFilms(category) {     //se crea dinamicamente los elementos a mostrar dentro de la categoria de films 
-  document.getElementById("all_movies").innerHTML = "";  //deja contenedor vacio 
-  const filtered_allclass = filterByCategory(data, category);
-  displayMovies(filtered_allclass);
-}
-
-const datesOptions = document.getElementsByClassName('filterByDates');
-Array.from(datesOptions).forEach(dateOption => {
-  dateOption.addEventListener('click', function () {
-    let moviesByDate = dateFilter(dataGhibli, dateOption.dataset.start, dateOption.dataset.end);
-    displayMovies(moviesByDate);
-  })
-})
-
-const orderByTitle = document.getElementById('order_atoz');
-orderByTitle.addEventListener('click', function () {
-  let orderData = ascendingOrder(dataGhibli);
-  displayMovies(orderData);
-})
-
-const orderTitles = document.getElementById('order_ztoa');
-orderTitles.addEventListener('click', function () {
-  let zToA = descendingOrder(dataGhibli);
-  displayMovies(zToA);
-})
-
-const ordenAños = document.getElementById('recientes');
-ordenAños.addEventListener('click', function () {
-  var newYears = ascendingYears(dataGhibli);
-  displayMovies(newYears);
-})
-
-const order_Oldyears = document.getElementById('antiguas');
-order_Oldyears.addEventListener('click', function () {
-  let oldys = descendingYears(dataGhibli);
-  displayMovies(oldys);
-})
 
 
 

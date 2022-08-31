@@ -69,21 +69,4 @@ export function filterby_genderPeople(jsonData) {
     });
   })
   return allGenderPeople;
-}
-
-export function palabraRepetida(text){
-  let contadorPalabras = 1;
-  let unicasPalabras = [];
-  let almacenador_vecesRepetidas = [];
-
-  return text.split("").sort();
-}
-  console.log(texto)
-
-
-
-
-
-
-
-
+};
