@@ -40,10 +40,10 @@ export function descendingOrder(data) {
 
 export function ascendingYears(jsonData) {
   let recentMore = jsonData.sort((a, b) => {
-    if (a.release_date > b.release_date) {
+    if (parseInt(a.release_date) > parseInt(b.release_date)) {
       return -1
     }
-    if (a.release_date < b.release_date) {
+    if (parseInt(a.release_date) < parseInt(b.release_date)) {
       return 1
     }
   })
@@ -52,10 +52,10 @@ export function ascendingYears(jsonData) {
 
 export function descendingYears(jsonData) {
   let old = jsonData.sort((a, b) => {
-    if (a.release_date < b.release_date) {
+    if (parseInt(a.release_date) < parseInt(b.release_date)) {
       return -1
     }
-    if (a.release_date > b.release_date) {
+    if (parseInt(a.release_date) > parseInt(b.release_date)) {
       return 1
     }
   })

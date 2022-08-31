@@ -59,7 +59,7 @@ function displayMovies(data) { //Función para mostrar todas las peliculas
   let data1 = "";
   data.forEach((value) => { //forEach itera sobre la data
     data1 += `<section class="movies">
-        <img src="${value.poster}" alt="poster" class="poster">
+        <img src="${value.poster}" alt="poster" class="poster" data-director="${value.director}" data-description="${value.description}">
         <h2 class="title">${value.title}</h2>
         <p>${value.release_date}</p>
       </section>`;
@@ -107,5 +107,28 @@ order_Oldyears.addEventListener('click', function () {
   displayMovies(oldys);
 })
 
+const modalC = document.querySelector('.modal-container');
+const modal = document.querySelector('.modal');
+const closeModal = document.querySelector('#close');
+const openModal = document.querySelectorAll('.poster');
 
+openModal.forEach(poster => {
+  poster.addEventListener('click', (e) =>{ poster.classList.toggle('modal-close');
+    //e.preventDefault(); // sirve para quitar # de un nuevo URL
+    //document.getElementById("mod").innerHTML = e.target.dataset.director + e.target.dataset.description;
+    const infoModal = `<section class="infoContainer">
+    <p class="modal_styles">Director: ${e.target.dataset.director}</p><br>
+    <p class="modal_styles">Description: ${e.target.dataset.description}</p>
+  </section>`;
+    document.getElementById("mod").innerHTML = infoModal;
+    modalC.style.visibility = 'visible';
+  });
+})
+
+closeModal.addEventListener('click', toClose)
+document.getElementsByClassName('modal-container')[0].addEventListener('click', toClose)
+function toClose() {
+  modal.classList.toggle('modal-close');
+  modalC.style.visibility = "hidden";
+}
 
