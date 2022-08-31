@@ -1,4 +1,4 @@
-import { filterByCategory, filmsGenders, dateFilter, ascendingOrder, descendingOrder, ascendingYears, descendingYears, filterby_rtScore} from './data.js';
+import { filterByCategory, filmsGenders, dateFilter, ascendingOrder, descendingOrder, ascendingYears, descendingYears, filterby_genderPeople, computerSet} from './data.js';
 import data from './data/ghibli/ghibli.js';
 
 const dataGhibli = data.films; //guarda el objeto en una variable
@@ -71,9 +71,18 @@ displayMovies(dataGhibli); //muestra todas las peliculas
 //area de grafica
 const ctx = document.getElementById('myChart').getContext('2d');
 
-function SoloGeneros(data)
-  let generoMujer = filterby_rtScore(data);
-  console.log(generoMujer);
+const femaleAndMan = filterby_genderPeople(dataGhibli);
+for (const value of femaleAndMan) {
+};
+
+let sum = 0;
+for (let i = 0; i < femaleAndMan.length; i++) {
+    sum += femaleAndMan[i];
+}
+console.log(sum);
+
+const NumerosRepetidos = computerSet(sum)
+console.log(NumerosRepetidos)
 
 
 

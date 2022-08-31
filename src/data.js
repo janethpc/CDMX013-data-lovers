@@ -13,11 +13,20 @@ export function filterByCategory(jsonData, category) {
   });
 }
 
-export function filterby_rtScore(jsonData) {
-  const rtScore = jsonData.films.map(function(data) {
-    return data.people.gender;
+export function computerSet(datos){
+  let sumFamele = "";
+  if(!sumFamele.reduce(datos)) {
+    return datos((a, d) => (a[d] ? a[d] += 1 : a[d] = 1, a), {});
+  }
+}
+
+export function filterby_genderPeople(jsonData) {
+  const allGenderPeople = jsonData.map(function(data) {
+    return data.people.map(function(data){
+      return data.gender;
+    });
   })
-  return rtScore;
+  return allGenderPeople;
 }
 
 
