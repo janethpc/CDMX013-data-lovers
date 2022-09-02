@@ -140,17 +140,23 @@ for (const value of femaleAndMan) {
 console.log(femaleAndMan)
 
 let sum = 0;
-let sumHombres = "";
+let sumHombres = 0;
 let sumMujer = 0;
-for (let i = 0; i < femaleAndMan.length; i++) {
-    if(femaleAndMan[i] === "Female"){
-      sumMujer = sumMujer +1;
-    };
-}
 
+femaleAndMan.forEach((value) => {
+  value.forEach((twoForEachvalue) => {
+    if(twoForEachvalue === "Female") {
+      sumMujer++;
+    }
+    if(twoForEachvalue === "Male"){
+      sumHombres++
+    }
+  })
+})
 
 console.log(sum);
 console.log(sumMujer)
+console.log(sumHombres)
 
 
 const myChart = new Chart(ctx, {
