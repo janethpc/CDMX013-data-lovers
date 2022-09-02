@@ -1,4 +1,4 @@
-import { filterByCategory, filmsGenders, dateFilter, ascendingOrder, descendingOrder, ascendingYears, descendingYears } from './data.js';
+import { filterByCategory, filmsGenders, dateFilter, ascendingOrder, descendingOrder, ascendingYears, descendingYears, filterby_genderPeople } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
 const dataGhibli = data.films; //guarda el objeto en una variable
@@ -132,3 +132,52 @@ function toClose() {
   modalC.style.visibility = "hidden";
 }
 
+const ctx = document.getElementById('myChart').getContext('2d');
+
+const femaleAndMan = filterby_genderPeople(dataGhibli);
+for (const value of femaleAndMan) {
+}; 
+console.log(femaleAndMan)
+
+let sum = 0;
+let sumHombres = "";
+let sumMujer = 0;
+for (let i = 0; i < femaleAndMan.length; i++) {
+    if(femaleAndMan[i] === "Female"){
+      sumMujer = sumMujer +1;
+    };
+}
+
+
+console.log(sum);
+console.log(sumMujer)
+
+
+const myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['female', 'male', 'na'],
+        datasets: [{
+            label: 'Rotten Tomatoes',
+            data: ['81','189', '3'],
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(153, 102, 255, 0.2)',
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(153, 102, 255, 1)',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});

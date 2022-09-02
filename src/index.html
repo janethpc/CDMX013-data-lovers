@@ -8,6 +8,7 @@
 </head>
 
 <body>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <header>
     <figure>
       <a href="/"><img src="images/studio-ghibli.png" alt="logo"></a>
@@ -45,14 +46,8 @@
               </ul>
             </div>
           </li>
-          <li><a href="#" class="a_parent">
-            <span><img src="https://img.icons8.com/dusk/64/000000/bar-chart.png" alt="Gráfica" class="icon"></span></a>
-            <div class="dd_menu">
-              <ul> 
-                <li><a href="#" class="dd_menu_a">GENERO</a></li>
-                <li><a href="#" class="dd_menu_a">SCORE</a></li>
-              </ul>
-            </div>
+          <li><a href="#containerGraf" class="a_parent">
+            <span><img id="grafica" src="https://img.icons8.com/dusk/64/000000/bar-chart.png" alt="Gráfica" class="icon"></span></a>
           </li>
         </ul> 
       </nav>
@@ -74,7 +69,12 @@
     </div>
   </div>
  
-
+  <div id="containerGraf">
+    <canvas id="myChart" height="300" width="300">
+      <section class="ejemplo"></section>
+    </canvas>
+  </div>
+  
   <script src="main.js" type="module"></script>
 </body>
 </html>
