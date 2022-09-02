@@ -132,32 +132,44 @@ function toClose() {
   modalC.style.visibility = "hidden";
 }
 
+//comineza seccion grafica 
 const ctx = document.getElementById('myChart').getContext('2d');
 
 const femaleAndMan = filterby_genderPeople(dataGhibli);
 for (const value of femaleAndMan) {
 }; 
-console.log(femaleAndMan)
+//let sumHombres = 0;
+//let sumMujer = 0;
 
-let sum = 0;
-let sumHombres = 0;
-let sumMujer = 0;
-
+let genderMap = new Map();
 femaleAndMan.forEach((value) => {
-  value.forEach((twoForEachvalue) => {
-    if(twoForEachvalue === "Female") {
+  value.forEach((genders) => {
+    if(genderMap.has(genders)){ //verifca si tengo la llave
+      let genderAmount = genderMap.get(genders); //recupera el valor para la llave
+      genderAmount++; //incrementa el valor para la llave
+      genderMap.set(genders, genderAmount); //actualiza el valor de la llave
+    }else{
+      genderMap.set(genders, 0); //si no tengo la llave la agrego y le asigno el valor inicial de 0 
+    }
+   /* if(genders === "Female") {
       sumMujer++;
     }
-    if(twoForEachvalue === "Male"){
+    if(genders === "Male"){
       sumHombres++
-    }
+    } */
   })
 })
+console.log(genderMap.get("Female"));
+console.log(genderMap.get("Male"));
+console.log(genderMap.get("NA"));
+console.log(genderMap);
 
-console.log(sum);
-console.log(sumMujer)
-console.log(sumHombres)
-
+let numberWoman = genderMap.get("Female");
+document.getElementById('pMujeres').innerHTML=numberWoman;
+let numberMen = genderMap.get("Male");
+document.getElementById('pHombres').innerHTML=numberMen;
+let numberNa = genderMap.get("NA");
+document.getElementById('pnd').innerHTML=numberNa
 
 const myChart = new Chart(ctx, {
     type: 'pie',
@@ -165,7 +177,7 @@ const myChart = new Chart(ctx, {
         labels: ['female', 'male', 'na'],
         datasets: [{
             label: 'Rotten Tomatoes',
-            data: ['81','189', '3'],
+            data: [numberWoman, numberMen, numberNa],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',
@@ -186,4 +198,4 @@ const myChart = new Chart(ctx, {
             }
         }
     }
-});
+}); 
