@@ -171,6 +171,13 @@ document.getElementById('pHombres').innerHTML=numberMen;
 let numberNa = genderMap.get("NA");
 document.getElementById('pnd').innerHTML=numberNa
 
+const mostrarGraf = document.getElementById('graf');
+document.getElementById("containerGraf").style.visibility = "hidden";
+mostrarGraf.addEventListener('click', function () {
+  document.getElementById("all_movies").innerHTML = '';
+  document.getElementById("containerGraf").style.visibility = "visible";
+})
+
 const myChart = new Chart(ctx, {
     type: 'pie',
     data: {
@@ -199,3 +206,5 @@ const myChart = new Chart(ctx, {
         }
     }
 }); 
+
+
